@@ -63,7 +63,14 @@ async def lifespan(_app: FastAPI):
     log_event("service_stopped", service=SERVICE_NAME)
 
 
-app = FastAPI(title="Day 12 Production Agent", version=SERVICE_VERSION, lifespan=lifespan)
+app = FastAPI(
+    title="Day 12 Production Agent",
+    version=SERVICE_VERSION,
+    lifespan=lifespan,
+    docs_url=None,
+    redoc_url=None,
+    openapi_url=None,
+)
 
 
 class AskRequest(BaseModel):
